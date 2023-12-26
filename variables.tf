@@ -25,9 +25,9 @@ variable "private_subnets" {
   type = list(string)
 }
 
-variable "nodegroup_subnet_ids" {
-  type = list(string)
-}
+# variable "nodegroup_subnet_ids" {
+#   type = list(string)
+# }
 
 variable "nodegroup_desired_size" {
   type    = number
