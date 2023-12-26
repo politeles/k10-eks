@@ -12,16 +12,16 @@ variable "cluster_name" {
   type = string
 }
 
-variable "eks_namespace" {
-  type    = string
-  default = "k10"
-}
+# variable "eks_namespace" {
+#   type    = string
+#   default = "k10"
+# }
 
 variable "vpc_id" {
   type = string
 }
 
-variable "cluster_subnet_ids" {
+variable "private_subnets" {
   type = list(string)
 }
 
