@@ -51,3 +51,9 @@ variable "nodegroup_disk_size" {
 variable "nodegroup_instance_types" {
   type = list(string)
 }
+
+variable "default_instance_type" {
+  type    = list(string)
+  default = ["t3.medium"]
+  
+}

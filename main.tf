@@ -8,7 +8,7 @@ locals {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "19.15.3"
+  version = "~> 19.0"
 
   cluster_name    = local.cluster_name
   cluster_version = "1.27"
@@ -16,8 +16,20 @@ module "eks" {
   vpc_id                         = var.vpc_id
   subnet_ids                     = var.private_subnets
   cluster_endpoint_public_access = true
-
+  cluster_addons = {
+    coredns = {
+      most_recent = true
+    }
+    kube-proxy = {
+      most_recent = true
+    }
+    vpc-cni = {
+      most_recent = true
+    }
+  }
+  # Self Managed Node Group(s)
   eks_managed_node_group_defaults = {
+    instance_types = var.default_instance_type
     ami_type = "AL2_x86_64"
 
   }
