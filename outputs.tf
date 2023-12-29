@@ -24,7 +24,7 @@ output "cluster_id" {
 }
 output "cluster_cert_data" {
   description = "Kubernetes Cluster Certificate Data"
-  value       = module.eks.cluster_certificate_data
+  value       = module.eks.cluster_certificate_authority_data
 }
 
 output "nodegroup_id" {
