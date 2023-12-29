@@ -29,5 +29,5 @@ output "cluster_cert_data" {
 
 output "nodegroup_id" {
   description = "Kubernetes Nodegroup ID"
-  value       = module.eks.cluster_nodegroup_id
+  value       = module.eks.eks_managed_node_groups["one"].id
 }
