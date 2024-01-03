@@ -55,5 +55,5 @@ variable "nodegroup_instance_types" {
 variable "default_instance_type" {
   type    = list(string)
   default = ["t3.medium"]
-  
+
 }
